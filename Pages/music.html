@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>斯乐奇想</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+
+    <link rel="stylesheet" href="../assets/css/music.css">
+
+</head>
+
+<body>
+
+<!-- =========================
+     🧭 导航栏
+========================= -->
+
+<nav class="nav">
+
+    <a href="index.html">首页</a>
+
+    <a href="quote.html">斯界原典</a>
+
+    <a href="music.html" class="active">
+        斯乐奇想
+    </a>
+
+    <a href="ideas.html">奇斯妙想</a>
+
+</nav>
+
+<!-- =========================
+     🎵 音乐页面
+========================= -->
+
+<section class="music-container">
+
+    <div class="music-layout">
+
+        <!-- =========================
+             📚 左侧收藏
+        ========================= -->
+
+        <div class="music-list glass-card">
+
+            <h2 class="music-title">
+                斯乐收藏
+            </h2>
+
+            <div
+                id="musicList"
+                class="music-grid"
+            ></div>
+
+        
+
+        </div>
+
+        <!-- =========================
+             ✍️ 右侧提交
+        ========================= -->
+
+        <div class="music-form glass-card">
+
+            <h2>
+                提交斯乐
+            </h2>
+
+            <input
+                type="text"
+                id="musicTitle"
+                placeholder="歌曲名称"
+            >
+
+            <input
+                type="text"
+                id="musicArtist"
+                placeholder="歌手"
+            >
+
+            <input
+                type="text"
+                id="musicQuote"
+                placeholder="推荐理由"
+            >
+
+            <input
+                type="text"
+                id="musicCover"
+                placeholder="封面图片链接"
+            >
+
+            <input
+                type="text"
+                id="qqUrl"
+                placeholder="QQ音乐链接"
+            >
+
+            <input
+                type="text"
+                id="neteaseUrl"
+                placeholder="网易云链接"
+            >
+
+            <button onclick="addMusic()">
+                提交
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     🚨 自定义弹窗
+========================= -->
+
+
+<div id="customAlert" class="custom-alert">
+  <div class="alert-box">
+    <p id="alertText"></p>
+    <button onclick="closeAlert()">确定</button>
+  </div>
+</div>
+
+
+<!-- =========================
+     🗑 删除确认弹窗
+========================= -->
+
+<div id="deleteModal" class="modal-overlay">
+
+  <div class="modal-box">
+
+    <h3>确认删除这首音乐？</h3>
+
+    <p>删除后无法恢复</p>
+
+    <div class="modal-actions">
+
+      <button class="modal-cancel" onclick="closeDeleteModal()">
+        取消
+      </button>
+
+      <button class="modal-danger" id="confirmDeleteBtn">
+        删除
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================
+     🌐 Supabase
+========================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../assets/js/features/music.js" defer></script>
+
+<script src="../assets/js/core/main.js"></script>
+
+</body>
+</html>

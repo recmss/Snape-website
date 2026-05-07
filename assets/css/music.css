@@ -1,0 +1,500 @@
+/******** layout **********/
+.music-container {
+    width: min(1400px, 92%);
+    margin: 100px auto 80px;
+}
+
+.music-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.glass-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+    border-radius: 24px;
+    padding: 28px;
+}
+
+/******** input **********/
+.music-form input,
+.music-search input {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.05);
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.music-form input:focus,
+.music-search input:focus {
+    border-color: rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.08);
+}
+
+/******** grid **********/
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/******** card **********/
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+/* 卡片 */
+.music-card {
+    position: relative;
+    display: flex;
+    gap: 14px;
+
+    padding: 16px;
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.25s;
+}
+
+.music-card:hover {
+    background: rgba(255,255,255,0.06);
+    transform: translateY(-2px);
+}
+
+/* 封面 */
+.music-cover {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* 内容 */
+.music-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* 文本块 */
+.music-line {
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.5;
+}
+
+.music-label {
+    opacity: 0.6;
+}
+
+/* 链接 */
+.music-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.music-link {
+    font-size: 13px;
+    color: #fff;
+    text-decoration: none;
+
+    padding: 4px 10px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.06);
+    transition: 0.2s;
+}
+
+.music-link:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+/* =========================
+   🎯 Spotify风格优化区
+========================= */
+
+/* 卡片布局优化 */
+.music-card {
+    position: relative;
+    display: flex;
+    gap: 14px;
+
+    padding: 14px;
+    border-radius: 16px;
+
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.25s;
+}
+
+.music-card:hover {
+    background: rgba(255,255,255,0.08);
+    transform: translateY(-3px);
+}
+
+/* 封面 */
+.music-cover {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.placeholder {
+    width: 64px;
+    height: 64px;
+    border-radius: 10px;
+
+    background: linear-gradient(135deg, #333, #111);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #666;
+    font-size: 12px;
+}
+
+/* 主内容 */
+.music-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* 同一行：歌曲 + 歌手 */
+.music-topline {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.music-topline .title {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.music-topline .artist {
+    font-size: 13px;
+    opacity: 0.6;
+}
+
+/* 推荐理由 */
+.music-reason {
+    font-size: 13px;
+    color: #b3b3b3;
+    line-height: 1.5;
+}
+
+/* 链接 */
+.music-links {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.music-link {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 8px;
+
+    background: rgba(255,255,255,0.06);
+    color: white;
+    text-decoration: none;
+
+    transition: 0.2s;
+}
+
+.music-link:hover {
+    background: rgba(255,255,255,0.14);
+}
+
+/* =========================
+   🎮 右下角操作按钮
+========================= */
+
+.music-actions {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+
+    display: flex;
+    gap: 6px;
+
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.music-card:hover .music-actions {
+    opacity: 1;
+}
+
+/* =========================
+   🔘 通用按钮
+========================= */
+
+.icon-btn {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+    font-size: 12px;
+
+    background: rgba(255,255,255,0.08);
+    color: white;
+
+    transition: 0.2s;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+}
+
+/* =========================
+   ✏️ 编辑按钮（蓝色）
+========================= */
+
+.icon-btn.edit:hover {
+    background: rgba(0, 150, 255, 0.35);
+}
+
+/* =========================
+   🗑 删除按钮（红色重点）
+========================= */
+
+.icon-btn.delete {
+    color: #ff6b6b;
+    background: rgba(255, 60, 60, 0.12);
+    border: 1px solid rgba(255, 80, 80, 0.25);
+}
+
+.icon-btn.delete:hover {
+    background: rgba(255, 60, 60, 0.3);
+    box-shadow: 0 0 12px rgba(255, 60, 60, 0.3);
+}
+
+
+
+
+
+/* =========================
+   🚨 提示弹窗
+========================= */
+
+.custom-alert {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0,0,0,0.65);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: 0.25s;
+    z-index: 999999;
+}
+
+.custom-alert.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+.alert-box {
+    background: rgba(20,20,20,0.95);
+    padding: 24px 28px;
+    border-radius: 16px;
+
+    color: white;
+    text-align: center;
+    min-width: 260px;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   🌿 玻璃绿按钮（已修改）
+========================= */
+
+.alert-box button {
+    margin-top: 10px;
+    padding: 6px 14px;
+
+    border: 1px solid rgba(120, 255, 200, 0.35);
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    /* 玻璃绿核心 */
+    background: rgba(80, 255, 180, 0.15);
+    color: #bfffe6;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.25s;
+}
+
+/* hover效果 */
+.alert-box button:hover {
+    background: rgba(80, 255, 180, 0.28);
+    box-shadow: 0 0 18px rgba(80, 255, 180, 0.25);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   🗑 删除弹窗（玻璃红）
+========================= */
+/* =========================
+   🎯 玻璃弹窗背景
+========================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition: 0.25s ease;
+    z-index: 999999;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* =========================
+   🧊 玻璃弹窗主体
+========================= */
+
+.modal-box {
+    width: 320px;
+    padding: 22px 24px;
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(18px);
+
+    color: #fff;
+    text-align: center;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+
+    animation: modalPop 0.25s ease;
+}
+
+/* 弹出动画 */
+@keyframes modalPop {
+    from {
+        transform: scale(0.92);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* =========================
+   🧾 标题 & 说明
+========================= */
+
+.modal-box h3 {
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: #fff;
+}
+
+.modal-box p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 18px;
+}
+
+/* =========================
+   🎮 按钮区
+========================= */
+
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* 取消按钮 */
+.modal-cancel {
+    padding: 6px 14px;
+
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-cancel:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 删除按钮（危险 + 玻璃红） */
+.modal-danger {
+    padding: 6px 14px;
+
+    border-radius: 10px;
+    border: 1px solid rgba(255, 80, 80, 0.35);
+
+    background: rgba(255, 60, 60, 0.15);
+    color: #ff6b6b;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-danger:hover {
+    background: rgba(255, 60, 60, 0.28);
+    box-shadow: 0 0 16px rgba(255, 60, 60, 0.35);
+}
