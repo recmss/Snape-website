@@ -26,7 +26,7 @@ window.addEventListener("DOMContentLoaded", () => {
 ========================= */
 async function getAutoCover(title, artist, qqId = "", neteaseId = "") {
 
-  const defaultCover = ".../assets/img/default-cover.jpg";
+  const defaultCover = "./assets/img/default-cover.jpg";
 
   try {
 
@@ -128,7 +128,7 @@ async function renderMusic() {
     
     card.className = "music-card";
 
-    const defaultCover = "../assets/img/default-cover.jpg";
+    const defaultCover = "./assets/img/default-cover.jpg";
 
     const cover =
         item.cover && item.cover.trim()
