@@ -1,0 +1,224 @@
+/* ===== 全局稳定基础设置 ===== */
+html {
+    overflow-y: scroll; /* 强制保留滚动条空间，防止左右抖动 */
+}
+
+body {
+    overflow-x: hidden; /* 禁止横向滚动，防止页面溢出 */
+}
+
+* {
+    box-sizing: border-box; /* 统一盒模型，布局更稳定 */
+}
+
+/* ===== 下面是页面样式 ===== */
+
+
+body {
+    margin: 0;
+    padding: 20px;
+    background: radial-gradient(circle at center, #111 0%, #000 100%);
+    color: #e0e0e0;
+    font-family: "Georgia", serif;
+}
+
+/* 黑雾 */
+.fog {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: url("https://www.transparenttextures.com/patterns/smoke.png");
+    opacity: 0.05;
+    animation: moveFog 60s linear infinite;
+}
+
+@keyframes moveFog {
+    from { transform: translate(0,0); }
+    to { transform: translate(-200px, -200px); }
+}
+
+/* 淡入 */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* 标题 */
+header {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+h2 {
+    font-size: 16px;
+    opacity: 0.6;
+    margin-top: 5px;
+}
+
+
+/* 横向导航 */
+.nav {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 40px;
+}
+
+.nav a {
+    position: relative;
+    color: #888;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: #fff;
+}
+
+/* 滑动线 */
+.nav-line {
+    position: absolute;
+    bottom: -5px;
+    height: 2px;
+    background: #00ff66;
+    transition: all 0.3s ease;
+}
+
+/* 内容 */
+section {
+    margin-top: 120px;
+    margin-left: 30px;
+    max-width: 600px;
+    
+}
+
+.sub {
+    opacity: 0.5;
+    font-style: italic;
+}
+
+/* 页脚 */
+footer {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    opacity: 0.6;
+}
+
+/* 鼠标光效 */
+.light {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #00ff66;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 10px #00ff66;
+    animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+
+/* =========================
+   🌐 主布局（左右结构）
+========================= */
+.layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px auto;
+    gap: 40px;
+}
+
+/*    📖 右侧文字区 */
+.story {
+    flex: 3;
+    line-height: 1.9;
+}
+
+/* 碎碎念 */
+.intro {
+    font-size: 14px;
+    opacity: 0.6;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+/* 引用（无竖线版） */
+blockquote {
+    padding-left: 0;
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 1.9;
+    color: #ddd;
+}
+
+/* 结尾（延迟出现） */
+.ending {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 1s;
+
+    margin-top: 40px;
+    font-size: 18px;
+    color: #00ff99;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 🌌 左侧关键词云区域 */
+.sphere-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateX(-60px); /* ⭐往左挪 */
+}
+
+/* canvas 魔法发光 */
+#tagCanvas {
+    filter: drop-shadow(0 0 20px rgba(255,255,255,0.15));
+    max-width: 500px;
+    width: 100%;
+}
+
+
+
+/* =========================
+   📱 响应式（手机自动上下排）
+========================= */
+@media (max-width: 900px) {
+    .layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .story {
+        text-align: center;
+    }
+
+    #tagCanvas {
+        max-width: 350px;
+    }
+}
