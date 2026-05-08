@@ -1,0 +1,231 @@
+/* =========================
+   🚨 提示弹窗
+========================= */
+
+.custom-alert {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(0,0,0,0.65);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition: 0.25s;
+
+    z-index: 999999;
+}
+
+.custom-alert.show {
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    pointer-events: auto !important;
+}
+
+.alert-box {
+
+    background: rgba(20,20,20,0.95);
+
+    padding: 24px 28px;
+
+    border-radius: 18px;
+
+    color: white;
+
+    text-align: center;
+
+    min-width: 260px;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+.alert-box button {
+
+    margin-top: 12px;
+
+    padding: 8px 16px;
+
+    border: 1px solid rgba(120,255,200,0.35);
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background: rgba(80,255,180,0.15);
+
+    color: #bfffe6;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.25s;
+}
+
+/* =========================
+   🗑 删除弹窗
+========================= */
+
+.modal-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(0,0,0,0.55);
+
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition: 0.25s ease;
+
+    z-index: 999999;
+}
+
+.modal-overlay.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+.modal-box {
+
+    width: 320px;
+
+    padding: 22px 24px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.06);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(18px);
+
+    color: #fff;
+
+    text-align: center;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+
+    animation: modalPop 0.25s ease;
+}
+
+@keyframes modalPop {
+
+    from {
+
+        transform: scale(0.92);
+
+        opacity: 0;
+    }
+
+    to {
+
+        transform: scale(1);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   🎮 删除弹窗按钮
+========================= */
+
+.modal-actions {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 18px;
+}
+
+.modal-cancel,
+.modal-danger {
+
+    min-width: 88px;
+
+    height: 40px;
+
+    padding: 0 18px;
+
+    border-radius: 12px;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: 0.2s;
+}
+
+/* 取消按钮 */
+
+.modal-cancel {
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    color: white;
+}
+
+.modal-cancel:hover {
+
+    background: rgba(255,255,255,0.14);
+}
+
+/* 删除按钮 */
+
+.modal-danger {
+
+    background: rgba(255,60,60,0.15);
+
+    border: 1px solid rgba(255,80,80,0.25);
+
+    color: #ff6b6b;
+}
+
+.modal-danger:hover {
+
+    background: rgba(255,60,60,0.28);
+
+    box-shadow: 0 0 16px rgba(255,60,60,0.25);
+}

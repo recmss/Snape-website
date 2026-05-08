@@ -1,0 +1,36 @@
+@import url("./layout.css");
+
+@import url("./toolbar.css");
+
+@import url("./form.css");
+
+@import url("./card.css");
+
+@import url("./modal.css");
+
+@import url("./responsive.css");
+
+
+
+
+
+/* =========================
+   🖤 斯内普底部标语
+========================= */
+
+.snape-footer {
+
+    text-align: center;
+
+    font-size: 12px;
+
+    opacity: 0.35;
+
+    color: white;
+
+    margin: 60px 0 20px;
+
+    letter-spacing: 0.5px;
+
+    user-select: none;
+}

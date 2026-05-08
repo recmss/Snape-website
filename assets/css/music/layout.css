@@ -1,0 +1,48 @@
+/******** layout **********/
+
+.music-container {
+
+    width: min(1400px, 92%);
+
+    margin: 100px auto 80px;
+}
+
+.music-layout {
+
+    display: block;
+}
+
+.glass-card {
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter: blur(14px);
+
+    border-radius: 24px;
+
+    padding: 28px;
+}
+
+/* =========================
+   🌌 整页背景层
+========================= */
+
+.music-section {
+
+    width: 100vw;
+
+    margin-left: calc(50% - 50vw);
+
+    padding: 0 40px;
+}
+
+/* 内容居中 */
+
+.music-list {
+
+    width: min(1600px, 100%);
+
+    margin: 0 auto;
+}

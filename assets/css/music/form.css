@@ -1,0 +1,247 @@
+/* =========================
+   🎭 添加音乐弹窗
+========================= */
+
+.music-form-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(10,10,15,0.96);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition: 0.25s ease;
+
+    z-index: 999999;
+}
+
+.music-form-overlay.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+/* =========================
+   🧊 弹窗主体
+========================= */
+
+.music-form-modal {
+
+    position: relative;
+
+    width: min(520px, 92%);
+
+    padding: 28px;
+
+    border-radius: 24px;
+
+    background: rgba(255,255,255,0.06);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    backdrop-filter: blur(18px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+
+    animation: formPop 0.25s ease;
+}
+
+@keyframes formPop {
+
+    from {
+
+        transform: scale(0.92);
+
+        opacity: 0;
+    }
+
+    to {
+
+        transform: scale(1);
+
+        opacity: 1;
+    }
+}
+
+/* 标题 */
+
+.music-form-modal h2 {
+
+    margin: 0 0 10px;
+
+    color: white;
+}
+
+/* 输入框 */
+
+.music-form-modal input {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    background: rgba(255,255,255,0.05);
+
+    color: white;
+
+    outline: none;
+
+    transition: 0.25s;
+}
+
+.music-form-modal input:focus {
+
+    border-color: rgba(255,255,255,0.25);
+
+    background: rgba(255,255,255,0.08);
+}
+
+/* 提交按钮 */
+
+.music-form-modal button {
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(80,255,180,0.8),
+        rgba(0,210,140,0.8)
+    );
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.music-form-modal button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 24px rgba(80,255,180,0.25);
+}
+
+/* ❌ 关闭按钮 */
+
+.close-form-btn {
+
+    position: absolute;
+
+    top: 14px;
+
+    right: 14px;
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    cursor: pointer;
+
+    line-height: 1;
+
+    font-size: 16px;
+
+    font-family: sans-serif;
+
+    transition: 0.2s;
+}
+
+.close-form-btn:hover {
+
+    background: rgba(255,255,255,0.16);
+
+    transform: rotate(90deg) scale(1.05);
+}
+
+/* =========================
+   🎵 自动解析区域
+========================= */
+
+.music-auto-area {
+
+    display: flex;
+
+    gap: 10px;
+}
+
+.music-auto-area input {
+
+    flex: 1;
+}
+
+/* 解析按钮 */
+
+.parse-btn {
+
+    white-space: nowrap;
+
+    padding: 0 18px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    background: linear-gradient(
+        135deg,
+        rgba(140,120,255,0.85),
+        rgba(108,92,231,0.85)
+    );
+
+    color: white;
+
+    transition: 0.25s;
+}
+
+.parse-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+    0 10px 24px rgba(108,92,231,0.35);
+}

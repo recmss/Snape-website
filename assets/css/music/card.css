@@ -1,0 +1,251 @@
+/******** grid **********/
+.music-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 24px;
+}
+
+/* =========================
+   🎵 Spotify风格卡片
+========================= */
+
+.music-card {
+
+    position: relative;
+
+    display: flex;
+
+    gap: 14px;
+
+    padding: 16px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.04);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    transition: 0.25s;
+}
+
+.music-card:hover {
+
+    background: rgba(255,255,255,0.08);
+
+    transform: translateY(-3px);
+}
+
+/* 封面 */
+
+.music-cover {
+
+    width: 64px;
+
+    height: 64px;
+
+    border-radius: 12px;
+
+    object-fit: cover;
+}
+
+.placeholder {
+
+    width: 64px;
+
+    height: 64px;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #333,
+        #111
+    );
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    color: #666;
+
+    font-size: 12px;
+}
+
+/* 主内容 */
+
+.music-main {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+/* 标题 */
+
+.music-topline {
+
+    display: flex;
+
+    gap: 10px;
+
+    align-items: baseline;
+
+    flex-wrap: wrap;
+}
+
+.music-topline .title {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    color: white;
+}
+
+.music-topline .artist {
+
+    font-size: 13px;
+
+    opacity: 0.6;
+
+    color: white;
+}
+
+/* 推荐理由 */
+
+.music-reason {
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    color: #b8b8b8;
+}
+
+/* 链接 */
+
+.music-links {
+
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 4px;
+}
+
+.music-links a {
+
+    font-size: 12px;
+
+    padding: 5px 10px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    background: rgba(255,255,255,0.06);
+
+    color: white;
+
+    transition: 0.2s;
+}
+
+.music-links a:hover {
+
+    background: rgba(255,255,255,0.14);
+}
+
+/* =========================
+   🎮 操作按钮
+========================= */
+
+/* =========================
+   🎮 操作按钮
+========================= */
+
+.music-actions {
+
+    position: absolute;
+
+    right: 14px;
+
+    bottom: 14px;
+
+    display: flex;
+
+    gap: 6px;
+
+    opacity: 0;
+
+    transition: 0.2s;
+}
+
+/* hover显示 */
+
+.music-card:hover .music-actions {
+
+    opacity: 1;
+}
+
+/* 按钮 */
+
+.music-actions button {
+
+    width: 28px;
+
+    height: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    line-height: 1;
+
+    font-size: 13px;
+
+    font-family: sans-serif;
+
+    transition: 0.2s;
+}
+
+.music-actions button:hover {
+
+    transform: scale(1.08);
+}
+
+/* 删除按钮 */
+
+.music-actions button:last-child {
+
+    color: #ff6b6b;
+
+    background: rgba(255,60,60,0.12);
+}
+
+.music-actions button:last-child:hover {
+
+    background: rgba(255,60,60,0.28);
+}
